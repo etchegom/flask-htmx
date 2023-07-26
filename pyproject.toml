@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "flask-demo"
+version = "0.1.0"
+description = ""
+authors = ["Etchegoyen Matthieu <etchegom@gmail.com>"]
+readme = "README.md"
+packages = [{include = "flask_demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^2.3.2"
+Flask-Admin = "^1.6.1"
+Flask-RESTful = "^0.3.10"
+Flask-DebugToolbar = "^0.13.1"
+Flask-Login = "^0.6.2"
+Flask-Migrate = "^4.0.4"
+flask-assets = "^2.0"
+pytailwindcss = "^0.2.0"
+flask-htmx = "^0.3.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
