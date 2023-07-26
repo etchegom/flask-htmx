@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
 from flask_assets import Bundle, Environment
-from todo import all_todos
 from flask_htmx import HTMX
 
+from todo import all_todos
 
 app = Flask(__name__)
 
