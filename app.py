@@ -5,6 +5,7 @@ from flask_htmx import HTMX
 from todo import all_todos
 
 app = Flask(__name__)
+app.config.from_pyfile("config.py")
 
 htmx = HTMX(app)
 
