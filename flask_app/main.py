@@ -30,4 +30,4 @@ def register_extensions(app: Flask) -> None:
 
 
 def register_blueprints(app: Flask) -> None:
-    app.register_blueprint(todos_bp)
+    app.register_blueprint(todos_bp, url_prefix='/todo')
