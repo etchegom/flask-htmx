@@ -1,4 +1,4 @@
-from app import db
+from flask_app.extensions import db
 
 
 class Todo(db.Model):

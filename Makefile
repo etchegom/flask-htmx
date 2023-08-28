@@ -10,10 +10,10 @@ reset: confirm-erase
 	@docker compose up -d --build
 
 build:
-	@tailwindcss -i ./static/src/main.css -o ./static/dist/main.css --minify
+	@tailwindcss -i ./flask_app/static/src/main.css -o ./flask_app/static/dist/main.css --minify
 
 runserver: build
-	flask --app app	run
+	@flask run --debug
 
 pre-commit:
 	@pre-commit run --all-files

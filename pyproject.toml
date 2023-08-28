@@ -48,9 +48,9 @@ force_grid_wrap = 0
 include_trailing_comma = true
 known_third_party = [
   "flask",
+  "flask_admin",
   "flask_assets",
   "flask_htmx",
-  "flask_admin",
   "flask_migrate",
   "flask_sqlalchemy"
 ]
