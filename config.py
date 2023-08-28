@@ -1,15 +1,16 @@
-"""Flask App configuration."""
+from environs import Env
 
-from os import environ, path
-from dotenv import load_dotenv
+env = Env()
+env.read_env()
 
+ENV = env.str("FLASK_ENV", default="dev")
 
-basedir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(basedir, ".env"))
+DEBUG = ENV == "dev"
+FLASK_DEBUG = ENV == "dev"
+FLASK_APP = "flask-htmx-tailwindcss"
+SECRET_KEY = env.str("SECRET_KEY")
 
+SQLALCHEMY_DATABASE_URI = env.str("DATABASE_URL")
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-class Config:
-    ENVIRONMENT = "dev"
-    FLASK_APP = "flask-htmx-tailwindcss"
-    FLASK_DEBUG = True
-    SECRET_KEY = environ.get("SECRET_KEY")
+FLASK_ADMIN_SWATCH = "cerulean"
