@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request
 from flask_admin.contrib.sqla import ModelView
 
-from .data import all_todos
-
 from flask_app.extensions import admin, db, htmx
+
+from .data import all_todos
 from .models import Todo
 
 admin.add_view(ModelView(Todo, db.session))

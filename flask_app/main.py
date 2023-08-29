@@ -1,8 +1,7 @@
 from flask import Flask
 
-from flask_app.extensions import admin, db, debug_toolbar, htmx, migrate, assets
-
 from flask_app import commands, todos
+from flask_app.extensions import admin, assets, db, debug_toolbar, htmx, migrate
 
 
 def create_app(config_object: str = "flask_app.settings") -> Flask:

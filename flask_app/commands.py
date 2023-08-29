@@ -5,4 +5,4 @@ from flask_app.todos.factories import TodoFactory
 @command(name="populate-db")
 def populate_db():
     print("Populating the database...")
-    TodoFactory.create_batch(10)
+    TodoFactory.create_batch(100)
