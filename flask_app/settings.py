@@ -17,3 +17,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 FLASK_ADMIN_SWATCH = "cerulean"
 
 DEBUG_TB_INTERCEPT_REDIRECTS = False
+
+IPYTHON_CONFIG = {
+    "InteractiveShell": {"colors": "Linux", "confirm_exit": False},
+}
