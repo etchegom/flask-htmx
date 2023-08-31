@@ -1,12 +1,14 @@
 from flask_app.repositories import TodoRepository
 from flask_restx import Namespace, Resource
 
+from .schemas import TodoSchema
+
 todo_ns = Namespace("todo", description="Todo operations")
+todo_list_schema = TodoSchema(many=True)
 
 
 @todo_ns.route("/")
 class TodoList(Resource):
-    # @todo_ns.doc('list_todos')
-    # @todo_ns.marshal_list_with(todo)
+    @todo_ns.doc("List all the todo tasks")
     def get(self):
-        return TodoRepository.get_all()
+        return todo_list_schema.dump(TodoRepository.get_all()), 200
