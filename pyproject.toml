@@ -54,7 +54,7 @@ known_third_party = [
   "flask_assets",
   "flask_htmx",
   "flask_migrate",
-  "flask_sqlalchemy"
+  "flask_sqlalchemy",
 ]
 line_length = 100
 multi_line_output = 3

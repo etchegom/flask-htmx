@@ -1,6 +1,6 @@
 from flask import Flask
 
-from flask_app import commands, todos
+from flask_app import commands, frontend
 from flask_app.extensions import admin, assets, db, debug_toolbar, htmx, migrate
 
 
@@ -23,7 +23,7 @@ def register_extensions(app: Flask) -> None:
 
 
 def register_blueprints(app: Flask) -> None:
-    app.register_blueprint(todos.views.blueprint, url_prefix="/todo")
+    app.register_blueprint(frontend.views.blueprint, url_prefix="/frontend")
 
 
 def register_commands(app: Flask) -> None:
