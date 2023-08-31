@@ -10,7 +10,6 @@ packages = [{ include = "flask_demo" }]
 python = "^3.11"
 Flask = "^2.3.2"
 Flask-Admin = "^1.6.1"
-Flask-RESTful = "^0.3.10"
 Flask-DebugToolbar = "^0.13.1"
 Flask-Migrate = "^4.0.4"
 flask-assets = "^2.0"
@@ -21,6 +20,7 @@ psycopg2-binary = "^2.9.7"
 environs = "^9.5.0"
 flask-shell-ipython = "^0.5.1"
 factory-boy = "^3.3.0"
+flask-restx = "^1.1.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
