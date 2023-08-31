@@ -14,10 +14,6 @@ def create_app(config_object: str = "flask_app.settings") -> Flask:
     register_blueprints(app)
     register_commands(app)
 
-    with app.app_context():
-        db.create_all()
-        db.session.commit()
-
     return app
 
 
