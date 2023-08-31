@@ -20,6 +20,6 @@ Inspired by: https://testdriven.io/blog/flask-htmx-tailwind/
 - [x] [add commands](https://flask.palletsprojects.com/en/2.3.x/cli/#custom-commands)
 - [ ] setup authentication
 - [ ] setup rest api
-- [ ] CRUDMixin & PkModel
-- [ ] setup a repository layer
+- [x] Base PkModel
+- [x] setup a repository layer
 - [ ] setup a restful api + swagger
