@@ -6,8 +6,8 @@ from .base import PkModel
 class Todo(PkModel):
     __tablename__ = "todos"
 
-    title = db.Column(db.String())
-    completed = db.Column(db.Boolean())
+    title = db.Column(db.String)
+    completed = db.Column(db.Boolean, default=False, nullable=False)
 
     def __init__(self, title, completed=False):
         self.title = title
