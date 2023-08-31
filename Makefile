@@ -17,3 +17,6 @@ runserver: build
 
 pre-commit:
 	@pre-commit run --all-files
+
+populate:
+	@flask populate-db

@@ -1,7 +1,7 @@
 from flask import Flask
 
-from flask_app.todos.views import blueprint as todos_bp
-from flask_app.extensions import admin, db, debug_toolbar, htmx, migrate, assets
+from flask_app import commands, todos
+from flask_app.extensions import admin, assets, db, debug_toolbar, htmx, migrate
 
 
 def create_app(config_object: str = "flask_app.settings") -> Flask:
@@ -9,6 +9,7 @@ def create_app(config_object: str = "flask_app.settings") -> Flask:
     app.config.from_object(config_object)
     register_extensions(app)
     register_blueprints(app)
+    register_commands(app)
     return app
 
 
@@ -22,4 +23,8 @@ def register_extensions(app: Flask) -> None:
 
 
 def register_blueprints(app: Flask) -> None:
-    app.register_blueprint(todos_bp, url_prefix='/todo')
+    app.register_blueprint(todos.views.blueprint, url_prefix="/todo")
+
+
+def register_commands(app: Flask) -> None:
+    app.cli.add_command(commands.populate_db)

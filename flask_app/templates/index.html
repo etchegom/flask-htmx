@@ -5,7 +5,7 @@
   <input
     type="text"
     name="search"
-    hx-post="/"
+    hx-post="{{ url_for('.todos_view') }}"
     hx-trigger="keyup changed delay:250ms"
     hx-indicator=".htmx-indicator"
     hx-target="#todo-results"
