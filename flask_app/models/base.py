@@ -1,7 +1,8 @@
 from datetime import datetime
 
-from flask_app.extensions import db
 from sqlalchemy import Column, DateTime, Integer, func
+
+from flask_app.extensions import db
 
 
 class PkModel(db.Model):
@@ -10,7 +11,7 @@ class PkModel(db.Model):
     id = Column(Integer, primary_key=True)
 
 
-class TimeStampedModel(PkModel):
+class TimeStampedPkModel(PkModel):
     __abstract__ = True
 
     created = Column(

@@ -1,4 +1,4 @@
-from flask_app.extensions import db
+from sqlalchemy import Boolean, Column, String
 
 from .base import PkModel
 
@@ -6,8 +6,8 @@ from .base import PkModel
 class Todo(PkModel):
     __tablename__ = "todos"
 
-    title = db.Column(db.String)
-    completed = db.Column(db.Boolean, default=False, nullable=False)
+    title = Column(String)
+    completed = Column(Boolean, default=False, nullable=False)
 
     def __init__(self, title, completed=False):
         self.title = title

@@ -59,6 +59,7 @@ known_third_party = [
   "flask_migrate",
   "flask_security",
   "flask_sqlalchemy",
+  "sqlalchemy",
 ]
 line_length = 100
 multi_line_output = 3

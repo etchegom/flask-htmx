@@ -9,9 +9,15 @@ from flask_app.models.auth import Role, User
 def create_app(config_object: str = "flask_app.settings") -> Flask:
     app = Flask(__name__)
     app.config.from_object(config_object)
+
     register_extensions(app)
     register_blueprints(app)
     register_commands(app)
+
+    with app.app_context():
+        db.create_all()
+        db.session.commit()
+
     return app
 
 
