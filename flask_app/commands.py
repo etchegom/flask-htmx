@@ -7,5 +7,6 @@ from flask_app.todos.models import Todo
 @command(name="populate-db")
 def populate_db():
     print("Removing all todos and creating 100 new ones.")
-    db.session.query(Todo).delete()
+    Todo.query.delete()
     TodoFactory.create_batch(100)
+    db.session.commit()
