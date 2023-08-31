@@ -1,7 +1,9 @@
 from flask import Flask
+from flask_security import SQLAlchemySessionUserDatastore
 
 from flask_app import commands, frontend, rest_api
-from flask_app.extensions import admin, api, assets, db, debug_toolbar, htmx, ma, migrate
+from flask_app.extensions import admin, api, assets, db, debug_toolbar, htmx, ma, migrate, security
+from flask_app.models.auth import Role, User
 
 
 def create_app(config_object: str = "flask_app.settings") -> Flask:
@@ -22,6 +24,11 @@ def register_extensions(app: Flask) -> None:
     assets.init_app(app)
     api.init_app(app)
     ma.init_app(app)
+
+    user_datastore = SQLAlchemySessionUserDatastore(
+        session=db.session, user_model=User, role_model=Role
+    )
+    security.init_app(app, user_datastore)
 
 
 def register_blueprints(app: Flask) -> None:

@@ -23,6 +23,7 @@ factory-boy = "^3.3.0"
 flask-restx = "^1.1.0"
 flask-marshmallow = "^0.15.0"
 marshmallow-sqlalchemy = "^0.29.0"
+flask-security-too = "^5.3.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
@@ -56,6 +57,7 @@ known_third_party = [
   "flask_assets",
   "flask_htmx",
   "flask_migrate",
+  "flask_security",
   "flask_sqlalchemy",
 ]
 line_length = 100

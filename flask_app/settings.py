@@ -21,3 +21,8 @@ DEBUG_TB_INTERCEPT_REDIRECTS = False
 IPYTHON_CONFIG = {
     "InteractiveShell": {"colors": "Linux", "confirm_exit": False},
 }
+
+SECURITY_PASSWORD_SALT = env.str(
+    "SECURITY_PASSWORD_SALT", default="146585145368132386173505678016728509634"
+)
+SECURITY_EMAIL_VALIDATOR_ARGS = {"check_deliverability": False}
