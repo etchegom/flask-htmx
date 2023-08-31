@@ -1,12 +1,7 @@
 from flask import Blueprint, render_template, request
-from flask_admin.contrib.sqla import ModelView
 
-from flask_app.extensions import admin, db, htmx
-from flask_app.models import Todo
+from flask_app.extensions import htmx
 from flask_app.repositories import TodoRepository
-
-admin.add_view(ModelView(Todo, db.session))
-
 
 blueprint = Blueprint("frontend", __name__, static_folder="../static")
 

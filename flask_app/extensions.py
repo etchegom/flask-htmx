@@ -1,4 +1,3 @@
-from flask_admin import Admin
 from flask_assets import Bundle, Environment
 from flask_htmx import HTMX
 from flask_migrate import Migrate
@@ -14,7 +13,6 @@ security = Security()
 migrate = Migrate()
 debug_toolbar = DebugToolbarExtension()
 htmx = HTMX()
-admin = Admin(name="Backoffice", template_mode="bootstrap3")
 api = Api()
 ma = Marshmallow()
 
