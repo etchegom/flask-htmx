@@ -1,7 +1,6 @@
 import factory
 from flask_app.extensions import db
-
-from .models import Todo
+from flask_app.models import Todo
 
 
 class TodoFactory(factory.alchemy.SQLAlchemyModelFactory):

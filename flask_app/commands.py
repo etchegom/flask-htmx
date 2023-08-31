@@ -1,7 +1,7 @@
 from click import command
 from flask_app.extensions import db
-from flask_app.todos.factories import TodoFactory
-from flask_app.todos.models import Todo
+from flask_app.models import Todo
+from flask_app.models_factories import TodoFactory
 
 
 @command(name="populate-db")
