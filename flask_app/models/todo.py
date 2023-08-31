@@ -1,10 +1,11 @@
 from flask_app.extensions import db
 
+from .base import PkModel
 
-class Todo(db.Model):
+
+class Todo(PkModel):
     __tablename__ = "todos"
 
-    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
     completed = db.Column(db.Boolean())
 
@@ -13,4 +14,4 @@ class Todo(db.Model):
         self.completed = completed
 
     def __repr__(self):
-        return f"<id {self.id}>"
+        return f"<Todo #{self.id}>"
