@@ -18,3 +18,11 @@ class AbstractRepository:
     @classmethod
     def get_by_id(cls, id: int) -> Type[T]:
         return db.session.get(cls.model, id)
+
+    @classmethod
+    def create(cls, data: dict = None, instance: T = None) -> Type[T]:
+        if instance is None:
+            instance = cls.model(**data)
+        db.session.add(instance)
+        db.session.commit()
+        return instance
