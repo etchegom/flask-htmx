@@ -19,7 +19,6 @@ Inspired by: https://testdriven.io/blog/flask-htmx-tailwind/
 - [ ] add async tasks
 - [x] [add commands](https://flask.palletsprojects.com/en/2.3.x/cli/#custom-commands)
 - [ ] setup authentication
-- [ ] setup rest api
 - [x] Base PkModel
 - [x] setup a repository layer
-- [ ] setup a restful api + swagger
+- [x] setup a restful api + swagger
